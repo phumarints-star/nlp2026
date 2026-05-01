@@ -124,7 +124,7 @@ def train_and_evaluate(model_class , name, X,y,Class_names):
     return classification_report(y,y_pred ,target_names=Class_names)
 
 # รันเปรียบเทียบ Training & Evaluate
-class_list = ['NO-INF', 'PATENT', 'COPYRIGHT']
+class_list = ['NO-INF', 'PATENT']
 # X_train , y_train = ไม่ผ่าน MOTE , X_res, y_res = ผ่านการ SMOTE แล้ว
-report_lstm = train_and_evaluate(LegalLSTM,"Unidirectional LSTM", X_res_3d,y_res_tensor,class_list)
+report_lstm = train_and_evaluate(LegalLSTM, "Unidirectional LSTM", X_res_3d, y_res_tensor, class_list)
 # report_bilstm = train_and_evaluate(LegalBiLSTM,"Bidirectional LSTM", X_res_3d,y_res_tensor,class_list)

@@ -69,7 +69,7 @@ class MockTokenize:
         input_ids, attention_mask = [], []  # ✅ reset ก่อน loop
         for text in texts:
             # [CLS=1] ... [SEP=2]
-            ids = [1] + [ord(c) % 5000 + 100 for c in text[sadmax_length - 2)]] + [2]  # ✅ แก้ typo และ bracket
+            ids = [1] + [ord(c) % 5000 + 100 for c in text[:max_length - 2]] + [2]  # ✅ แก้ typo และ bracket
             pad_len = max_length - len(ids)
             mask = [1] * len(ids) + [0] * pad_len
             ids  = ids + [0] * pad_len
